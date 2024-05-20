@@ -12,7 +12,7 @@ RUN pip install poetry
 RUN pip install uvicorn
 
 COPY pyproject.toml poetry.lock ./
-COPY . app
+COPY . ./
 
 RUN poetry install --no-root
 EXPOSE 8000
