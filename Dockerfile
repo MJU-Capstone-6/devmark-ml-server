@@ -15,4 +15,4 @@ COPY . app
 
 RUN poetry install --no-root
 EXPOSE 8000
-ENTRYPOINT [ "poetry" ,"run", "fastapi", "run", "src/main.py"  ]
+ENTRYPOINT [ "poetry" ,"run", "fastapi", "run", "/app/src/main.py"  ]
