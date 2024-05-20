@@ -15,4 +15,4 @@ COPY . app
 
 RUN poetry install --no-root
 EXPOSE 8000
-CMD [ "poetry" ,"run", "fastapi", "run", "src/main.py"  ]
+CMD [ "poetry" ,"run", "fastapi", "run", "main.py" ]
