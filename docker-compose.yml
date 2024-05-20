@@ -8,4 +8,14 @@ services:
       - .:/app
     ports:
       - "8000:8000"
-    command: ["poetry", "run", "fastapi", "run", "src/main.py"]
+    command:
+      [
+        "poetry",
+        "run",
+        "uvicorn",
+        "src.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+      ]

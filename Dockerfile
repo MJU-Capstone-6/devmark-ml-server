@@ -9,10 +9,12 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 RUN pip install poetry
+RUN pip install uvicorn
 
 COPY pyproject.toml poetry.lock ./
 COPY . app
 
 RUN poetry install --no-root
 EXPOSE 8000
-CMD [ "poetry" ,"run", "fastapi", "run", "src/main.py" ]
+
+CMD ["poetry","run","uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
